@@ -24,3 +24,12 @@ p {
 #right {
     text-align: right;
 }
+
+#main {
+    width: 65%;
+    /* margin: 0 16.5% 0 16.5%; */
+    padding: 10px;
+    margin: 0 auto;
+    border: 10px solid red;
+
+}
