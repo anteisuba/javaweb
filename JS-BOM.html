@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.alert("hello bom");
+        alert("hello bom window");
+
+        //对话框,确认true,取消false
+        var flag = confirm("您去人删除该对话框吗");
+        alert(flag);
+
+
+        //定时器,周期性的执行某一个函数
+        var i = 0;
+        setInterval(function() {
+            i++
+            console.log("定时器执行了:" + i);
+        },2000);
+
+        //定时器，延迟指定时间执行一次
+        setTimeout(function() {
+            alert("JS");
+        },3000);
+
+        alert(location.href)
+
+        location.href = "https://www.google.com";
+
+        
+
+    </script>
+</body>
+</html>
