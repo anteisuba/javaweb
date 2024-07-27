@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="dengpao" src="./img/6.jpeg"> <br><br>
+
+    <div>明朝</div> <br><br>
+    <div>元神</div> <br><br>
+
+    <input type="checkbox" name="cls"> 电影 
+    <input type="checkbox" name="cls"> 旅游
+    <input type="checkbox" name="cls"> 游戏
+    <input type="button" onclick="on()" value="按钮1">
+    <input type="button" id="btn" value="按钮2">
+
+</body>
+
+<script>
+    var img = document.getElementById('dengpao');
+    img.src = './img/1.jpeg';
+
+    var divs = document.getElementsByTagName('div');
+    for (let i = 0; i < divs.length; i++) {
+        const input = divs[i];
+        input.innerHTML += "<font color = 'red'>very good</font>";
+               
+    }
+
+    var ins = document.getElementsByName('cls');
+    for (let i = 0; i < ins.length; i++) {
+        const element = ins[i];
+        element.checked = true;
+        
+    }
+    
+    function on() {
+        alert('我被点击了！');
+    }
+
+    document.getElementById('btn').onclick = function() {
+        alert('我被点击了！');
+    }
+
+</script>
+</html>
