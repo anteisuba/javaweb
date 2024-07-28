@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <a v-bind:href="url">google1</a> //动态绑定
+        <a :href="url">google2</a>
+    </div>
+    
+</body>
+<script>
+    new Vue ({
+        el:"#app",
+        data:{
+            url:"https://t.bilibili.com/?spm_id_from=333.851.b_696e7465726e6174696f6e616c486561646572.28"
+        }
+    })
+</script>
+</html>
