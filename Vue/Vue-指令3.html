@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        年龄<input type="text" v-model="age">经判定，为:
+        <span v-if="age <= 35">年轻人</span>
+        <span v-else-if="age > 35 && age < 60">中年人</span>
+        <span v-else>老年人</span>
+
+        <br><br>
+
+        年龄<input type="text" v-model="age1">经判定，为:
+        <span v-show="age1 <= 35">年轻人</span>
+        <span v-show="age1 >= 35 && age1 < 60">中年人</span>
+        <span v-show="age1 > 60">老年人</span>
+        
+
+    </div>
+</body>
+<script>
+    new Vue ({
+        el:"#app",
+        data:{
+            age:20,
+            age1:30
+        },
+        methods:{
+
+        }
+    })
+</script>
+</html>

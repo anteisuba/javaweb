@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>v-for</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
 </head>
 <body>
     <div id="app">
-        <!--动态绑定 -->
-        <a v-bind:href="url">google1</a> 
-        <a :href="url">google2</a>
-
-        <input type="text" v-model="url">
+        <div v-for = "(addr,index) in addrs">{{index + 1}} : {{addr}} </div>
     </div>
-    
 </body>
 <script>
     new Vue ({
-        el:"#app",
+        el:"#app", 
         data:{
-            url:"https://t.bilibili.com/?spm_id_from=333.851.b_696e7465726e6174696f6e616c486561646572.28"
+            addrs:["北京","上海","西安","成都","深圳"]
+        },
+        methods:{
+
         }
     })
 </script>
