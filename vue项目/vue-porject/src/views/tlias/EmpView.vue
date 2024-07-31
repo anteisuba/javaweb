@@ -3,7 +3,7 @@
         <el-container style="height: 700px; border: 1px solid #eee">
             <el-header style="font-size:40px;background-color: rgb(238, 241, 246)">tilas 智能学习辅助系统</el-header>
             <el-container>
-                <el-aside width="200px">
+                <el-aside width="230px" style="border: 1px solid #eee">
                     <el-menu :default-openeds="['1', '3']">
                         <el-submenu index="1">
                             <template slot="title"><i class="el-icon-message"></i>系统信息管理</template>
@@ -27,13 +27,27 @@
                         <el-form-item>
                             <el-button type="primary" @click="onSubmit">查询</el-button>
                         </el-form-item>
+                        <el-form-item label="入职日期">
+                            <!-- 日期选择器 -->
+                            <el-date-picker v-model="searchForm.entrydate" type="daterange" range-separator="至"
+                                start-placeholder="开始日期" end-placeholder="结束日期">
+                            </el-date-picker>
+                        </el-form-item>
                     </el-form>
 
                     <!-- 表格 -->
-                    <el-table :data="tableData">
+                    <el-table :data="tableData" border>
                         <el-table-column prop="name" label="姓名" width="180"></el-table-column>
-                        <el-table-column prop="image" label="图像" width="180"></el-table-column>
-                        <el-table-column prop="gender" label="性别" width="140"></el-table-column>
+                        <el-table-column label="图像" width="180">
+                            <!-- <temple slot-scope="scope">
+                                <img src="scope.row.img" width="100px" height="70px">
+                            </temple> -->
+                        </el-table-column>
+                        <el-table-column label="性别" width="140">
+                            <!-- <template slot-scope="scope">
+                                {{ scope.row.gender == 1 ? '男' : '女'}}
+                            </template> -->
+                        </el-table-column>
                         <el-table-column prop="job" label="职位" width="140"></el-table-column>
                         <el-table-column prop="entrydate" label="入职日期" width="180"></el-table-column>
                         <el-table-column label="操作">
@@ -41,6 +55,12 @@
                             <el-button type="danger" size="mini">删除</el-button>
                         </el-table-column>
                     </el-table>
+
+                    <br><br>
+                    <!-- 分页条 -->
+                    <el-pagination background layout="total,sizes,prev, pager, next,jumper"
+                        @size-change="handleSizeChange" @current-change="handleCurrentChange" :total="100">
+                    </el-pagination>
                 </el-main>
             </el-container>
         </el-container>
@@ -49,18 +69,33 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     data() {
         return {
             tableData: [],
-            name:"",
-            gender:""
+            searchForm: {
+                name: "",
+                gender: "",
+                entrydate: []
+            }
         }
     },
-    methods:{
-        onSubmit:function() {
+    methods: {
+        onSubmit: function () {
             alert("查询数据");
+        },
+        handleSizeChange: function (val) {
+            alert("每页记录数变化" + val)
+        },
+        handleCurrentChange: function (val) {
+            alert("页码发生变化" + val)
         }
+    },
+    mounted() {
+        axios.get("").then((result) => {
+            this.tableData = result.data.data;
+        });
     }
 
 }
