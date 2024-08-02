@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .testDemocsss{
+            color:red;
+            font-size:20px;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            const mess01 = "名前を入力してください。";
+            const mess02 = "ユーザーの長さは１５桁まで入力してください";
+            const mess03 = "パスワードを入力してください。";
+            const testReg = /^[a-zA-Z0-9]*$/;
+            const mess04 = "英数字のみ入力してください";
+            const mess05 = "検証成功";
+            const mess06 = "パスワード間違いました、登録失敗！";
+            const userName = "yang";
+            const userPW = "jian";
+
+
+
+
+
+            console.warn("これが警告メッセージです。");
+            console.error("これがエラーメッセージです。");
+
+            //ユーザー検証
+            let x = document.getElementById("fname").value;
+            console.log("xの値"+x);
+
+            if(x == null || x == "") {
+                alert(mess01);
+                return false;
+            }
+
+            //課題２：ユーザーチェック追加　長さは最大１５桁まで
+            //获取用户名的值，再获取值的长度，如果值的长度大于15，弹出框事件，并且返回false
+
+            if(x.length>15) {
+                alert(mess02)
+                return false;
+            }
+
+
+
+            //パスワード検証
+            let y = document.getElementById("password").value;
+            if(y == null || y == "") {
+                alert(mess03);
+                return false;
+            }
+
+            //課題１：パスワードチェック追加　英数字のみ入力、特殊符号入力不可
+            //假如取得的密码值不符合逻辑判断，就弹出框事件，并且返回false
+
+            //逻辑判断：正则表达式 var regex = /^[a-zA-Z0-9]*$/;
+            //js正则表达式匹配：regex.test()
+            
+            //不符合判断逻辑
+            if(!(testReg.test(y))) {
+                alert(mess04);
+                return false;
+            }
+
+
+            //仮の登録処理
+            if(x == userName && y == userPW) {
+                alert(mess05);
+                return true;
+            } else {
+                let error = mess06;
+                alert(error);
+                //パスワード間違い場合、下にアラート提示文字を表示させる
+                //1.表示场所获取js
+                let domMess = document.getElementById("showMe");
+
+                //2.添加文字html
+               // domMess.innerHTML="<div class='testDemocsss'>パスワード間違いました、登録失敗！</div>";
+                domMess.innerHTML=error;
+
+                //3.添加样式
+                domMess.classList.add("testDemocsss");
+                return false;
+            }
+
+            //ユーザー、パスワードが必須項目で、必須項目前に＊符号追加します
+            //パスワード間違い場合、下にアラート提示文字を表示させる
+
+
+
+
+        }
+    </script>
+</head>
+<body>
+    <h1>サイトシステム</h1>
+    <form name="myname" action="2.html" onsubmit="return validateForm()" method="post">
+        *ユーザー：<input type="text" name="fname" id="fname"><br>
+        *パスワード：<input type="password" name="password" id="password"><br>
+        権限コード：<input type="text" name="syumi" id="syumi"><br>
+        <input type="submit" value="提出">
+        <div id="showMe"></div>
+
+        
+    </form>
+</body>
+</html>

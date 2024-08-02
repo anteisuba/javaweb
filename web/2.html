@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myFunction() {
+            //var a = 1;
+            // if(a>-1) {
+            //     console.log("これはフローです");
+            //     alert(a);
+            // } else if(a>0){
+            //     console.log("これはフローではない");
+            // } else{
+            //     console.log("これはフロー３です");
+            // }
+            // switch(a) {
+            //     case 1:
+            //         console.log("aの値は1です");
+            //         break;
+            //     case 2:
+            //         console.log("bの値は2です");
+            //         break;
+            // }
+            // for(var i=0;i<3;i++) {
+            //     console.log("該当ログ実行されました。" + i);
+            // }
+            // var a = ["aa","bb","cc","dd"];
+            // for(x in a) {
+            //     console.log("該当ログ実行されました、該当値は：" + a[x]);
+            // }
+            var a = 3
+            while(a>0){
+                if(a==2) {
+                    a--; //不递减会死循环
+                    continue;
+                }
+                console.log("実行されました。");
+                a--;
+                console.log(a);
+                
+            }
+            console.log("実行完了")
+        }
+
+    </script>
+</head>
+<body>
+    <button type="button" onclick="myFunction()">クリック</button>
+    
+</body>
+</html>

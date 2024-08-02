@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myFunction() {
+            var a = 2;
+            var b = 3;
+            var c = a + b;
+            var uu = 4;
+            var d = test(a,b);
+            document.getElementById("demo").innerHTML="更新後demo"; //demo　更新イベント
+            document.getElementById("demo").innerHTML="更新後myDIV"; //my DIV 更新イベント
+            document.getElementById("demo").innerHTML=d;
+
+            // test();
+            // function test() {
+            //     alert(uu);//アラートイベント
+            // }
+
+            // alert(c);
+        }
+
+        function test(demo1,demo2) {
+            var aa = demo1;
+            var bb = demo2;
+            return aa+ bb;
+        }
+
+    </script>
+</head>
+<body>
+    <div id="demo">例文Demo</div>
+    <div id="myDIV">例文MyDiv</div>
+    <button type="button" onclick="myFunction()">ここでクッリク</button>
+</body>
+</html>

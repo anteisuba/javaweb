@@ -2,18 +2,17 @@
   <div>
     <!-- <h1>{{ message }}</h1> -->
     <!-- <element-view></element-view> -->
-    <!-- 员工管理 -->
-    <EmpView></EmpView>
-
+    <!-- <EmpView></EmpView> -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 // import ElementView from "./views/element/ElementView.vue";
 // import ElementView from './views/element/ElementView.vue';
-import EmpView from './views/tlias/EmpView.vue';
+// import EmpView from './views/tlias/EmpView.vue';
 export default {
-  components:{EmpView},
+  components:{ },
   data() {
     return {
       message:"Hello Vue"

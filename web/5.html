@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validateForm() {
+
+            try{
+                var a = someFuncrion();
+                console.log("aの値" + a);
+            }catch(e) {
+                console.log("これがエラーです");
+            }finally {
+                console.log("エラーが捕獲します")
+            }
+
+            
+
+            console.log("これが正常フローです")
+        }
+        function someFuncrion() {
+            throw new Error("これがErrorです");
+        }
+    </script>
+</head>
+<body>
+    <input type="submit" onclick="validateForm()" value="テスト">
+</body>
+</html>
