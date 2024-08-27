@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 
 @SpringBootTest  //springboot整合单元测试的注解
@@ -47,8 +48,15 @@ class SpringbootMybatisQuickstartApplicationTests {
 
     @Test
     public void testList() {
-        List<User> userList = userMapper.list("张",(short) 1, LocalDate.of(2010,1,1),LocalDate.of(2020,1,1));
+//        List<User> userList = userMapper.list("张",(short) 1, LocalDate.of(2010,1,1),LocalDate.of(2020,1,1));
+        List<User> userList = userMapper.list(null, (short) 1, null, null);
         System.out.println(userList);
+    }
+
+    @Test
+    public void testDeleteByIds() {
+        List<Integer> ids =  Arrays.asList(1,2,3);
+        userMapper.deleteById(ids);
     }
 
 }

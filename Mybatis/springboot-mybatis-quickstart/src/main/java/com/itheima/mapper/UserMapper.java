@@ -35,4 +35,8 @@ public interface UserMapper {
     public List<User> list(String name,Short gender,LocalDate begin,LocalDate end);
 
 
+    public void update2(User user);
+
+    public void deleteById(List<Integer> ids);
+
 }

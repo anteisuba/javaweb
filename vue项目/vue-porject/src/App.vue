@@ -15,7 +15,7 @@ export default {
   components:{ },
   data() {
     return {
-      message:"Hello Vue"
+      message:"Hello Yang JIAN"
     }
   },
   methods: {
