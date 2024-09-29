@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<h2>ログインページ</h2>
+<div class="login">
+    <form th:action="@{/login}" method="post">
+        <div>
+            <label for="name">ログインID：</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="phone">パスワード：</label>
+            <input type="text" id="phone" name="phone" required>
+        </div>
+        <div>
+            <button type="submit">ログイン</button>
+        </div>
+        <div th:if="${error}" style="color: red">
+            <p th:text="${error}"></p>
+        </div>
+        <button id="btnRE¥egister" data-loading="ログイン中、お待ちください">新規登録</button>
+    </form>
+</div>
+
+</body>
+</html>

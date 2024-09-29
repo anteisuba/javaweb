@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/schema/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.springboot2.mapper.UserMapper">
+    <select id="selectUserInfo" parameterType="String" resultType="com.itheima.springboot2.entity.User">
+        select *
+        from user
+        where name = #{name}
+        and phone = #{phone}
+    </select>
+
+    <insert id="readFileAndWrite" parameterType="com.itheima.springboot2.entity.User">
+        insert into User(id,name,age,gender,phone)
+        values (#{id},#{name},#{age},#{gender},#{phone})
+    </insert>
+</mapper>
